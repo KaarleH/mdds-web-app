@@ -15,6 +15,6 @@ document.querySelector('form').addEventListener('submit', (event) => {
 socket.on('chat message', (msg) => {
     console.log(msg)
   const item = document.createElement('li');
-  item.innerHTML = msg;
+  item.textContent = msg;
   document.getElementById('messages').appendChild(item);
 });
