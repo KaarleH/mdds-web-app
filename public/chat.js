@@ -15,6 +15,17 @@ document.querySelector('form').addEventListener('submit', (event) => {
 socket.on('chat message', (msg) => {
     console.log(msg)
   const item = document.createElement('li');
+  item.classList.add(
+    "py-2",
+    "px-3",
+    "bg-red-400",
+    "rounded-lg",
+    "w-fit",
+    "m-5"
+  )
   item.textContent = msg;
+  document.getElementById('messages').classList.add(
+    "pb-2",
+  )
   document.getElementById('messages').appendChild(item);
 });
