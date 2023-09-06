@@ -7,13 +7,14 @@ document.querySelector('form').addEventListener('submit', (event) => {
   event.preventDefault();
   const inp = document.getElementById('m');
   const username = document.getElementById('username');
-  socket.emit('chat message', username.value, inp.value);
+  socket.emit('chat message', [username.value + ': ' + inp.value]);
   inp.value = '';
   username.value = '';
 });
 
 socket.on('chat message', (msg) => {
+    console.log(msg)
   const item = document.createElement('li');
-  item.innerHTML = msg + '' + username;
+  item.innerHTML = msg;
   document.getElementById('messages').appendChild(item);
 });
