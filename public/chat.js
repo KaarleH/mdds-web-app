@@ -1,7 +1,7 @@
 'use strict';
 
 // Server URL below must point to your server, localhost works for local development/testing
-const socket = io('https://kaarlemachine.northeurope.cloudapp.azure.com/');
+const socket = io('http://localhost:3000/#');
 
 document.querySelector('form').addEventListener('submit', (event) => {
   event.preventDefault();
@@ -16,16 +16,20 @@ socket.on('chat message', (msg) => {
     console.log(msg)
   const item = document.createElement('li');
   item.classList.add(
-    "py-2",
+    "py-1",
     "px-3",
-    "bg-red-400",
+    "border-2",
     "rounded-lg",
+    "break-all",
+    "text-sm",
     "w-fit",
-    "m-5"
+      "m-4"
   )
   item.textContent = msg;
   document.getElementById('messages').classList.add(
-    "pb-2",
+      "pb-1",
+      "pt-1",
+
   )
   document.getElementById('messages').appendChild(item);
 
