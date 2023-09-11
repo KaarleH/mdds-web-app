@@ -28,4 +28,12 @@ socket.on('chat message', (msg) => {
     "pb-2",
   )
   document.getElementById('messages').appendChild(item);
+
+  const rooms = document.querySelector("#rooms");
+  let currentRoom = rooms.value;
+
+  rooms.addEventListener('change', () => {
+    currentRoom = rooms.value;
+    document.getElementById('messages').innerHTML = '';
+  })
 });
