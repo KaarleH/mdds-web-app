@@ -7,8 +7,9 @@ module.exports = {
       "primary": "#04118a",
       "light": "#142172",
       "danger": "#B40305",
-      "secondary": "#D00524",
-      "white": "#ffffff"
+      "secondary": "#d25866",
+      "white": "#ffffff",
+      "gray": "#b9b1b1"
     },
     extend: {
       height: {

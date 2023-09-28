@@ -95,7 +95,7 @@
       </a>
       <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
           <span class="sr-only">Open main menu</span>
-          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+          <svg class="w-5 h-5" style="color: #d25866;" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="secondary" viewBox="0 0 17 14">
               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
           </svg>
       </button>
@@ -114,25 +114,29 @@
       </div>
     </div>
   </nav>
-  <div class="hidden sm:block relative bg-cover bg-center h-80" style="background-image: url('banner.jpg');">
+  <div class="relative bg-cover bg-center h-[250px] sm:h-[400px]" style="background-image: url('banner.jpg');">
       <div class="absolute inset-0 bg-black opacity-50"></div>
       <div class="absolute inset-0 flex items-center justify-center">
           <div class="text-white text-center">
-              <h1 class="text-2xl font-bold mb-4">Welcome to Our Website</h1>
+              <h1 class="relative top-20 text-2xl font-bold mb-4">Welcome to Our Website</h1>
+              <p class="relative top-20 text-lg mb-8">Discover the best movies with us.</p>
           </div>
       </div>
   </div>
-  <div class="flex gap-5 flex-col sm:justify-center sm:flex-row sm:p-5">
-      <video class="video-js vjs-theme-sea w-full sm:w-1/2" controls
+  <section class="flex flex-row w-full h-full gap-5 justify-center flex-col items-center mt-4 items-start sm:flex-row sm:p-5">
+          <div class="w-11/12 sm:w-8/12 aspect-video h-fit">
+      <video class="video-js vjs-theme-sea w-full h-full" controls
              id="my-video"
              preload="auto"
-             height="440"
              poster="jakrecipeslogo.png"
              data-setup="{}">
           <source src="stream.mp4" type="video/mp4" />
           <source src="stream.mp4" type="video/webm" />
       </video>
-  <form class="w-11/12 sm:w-1/4 m-4 sm:m-0 h-1/2 bg-light rounded-md flex flex-col">
+          </div>
+          <div class="h-auto w-3/4 sm:w-5/12">
+  <form class="bg-light h-auto w-full">
+      <ul id="messages" class="bg-gray border-4 rounded-lg border-light overflow-y-scroll max-h-[200px]" style="list-style: none;"></ul>
       <label for="chat" class="sr-only">Your message</label>
       <div class="flex flex-col gap-5 w-auto items-center px-3 py-2 rounded-lg bg-gray-50 dark:bg-gray-700">
           <select required id="rooms" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/2 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
@@ -140,18 +144,16 @@
               <option value="R2">Room 2</option>
               <option value="R3">Room 3</option>
           </select>
-          <textarea required id="username" rows="1" class="block mx-4 p-2.5 w-2/3 sm:w-1/2 text-sm text-gray-900 bg-white rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Username"></textarea>
-          <textarea required id="m" rows="1" class="block mx-4 p-2.5 w-2/3 sm:w-1/2 text-sm text-gray-900 bg-white rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Your message..."></textarea>
+          <textarea required id="username" rows="1" class="block mx-4 p-2.5 w-3/4 sm:w-2/3 text-sm text-gray-900 bg-white rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Username"></textarea>
+          <textarea required id="m" rows="1" class="block mx-4 p-2.5 w-3/4 sm:w-2/3 text-sm text-gray-900 bg-white rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Your message..."></textarea>
           <button type="submit" class="inline-flex justify-center p-2 text-blue-600 rounded-full cursor-pointer hover:bg-blue-100 dark:text-blue-500 dark:hover:bg-gray-600">
-              <svg class="w-5 h-5 rotate-90" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 18 20">
-                  <path d="m17.914 18.594-8-18a1 1 0 0 0-1.828 0l-8 18a1 1 0 0 0 1.157 1.376L8 18.281V9a1 1 0 0 1 2 0v9.281l6.758 1.689a1 1 0 0 0 1.156-1.376Z"/>
-              </svg>
+              <a class="w-20 bg-secondary text-lg rounded-lg">Send</a>
               <span class="sr-only">Send message</span>
           </button>
       </div>
-      <ul id="messages" class="bg-white border-4 rounded-lg border-light overflow-y-scroll max-h-[200px]" style="list-style: none;"></ul>
 </form>
-  </div>
+          </div>
+  </section>
 <div class="flex flex-col lg:flex-row gap-12 p-5 items-center justify-center">
   <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
       <a href="#">
