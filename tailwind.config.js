@@ -10,7 +10,11 @@ module.exports = {
       "secondary": "#D00524",
       "white": "#ffffff"
     },
-    extend: {},
+    extend: {
+      height: {
+        '76': '18.75rem',
+      }
+    },
   },
   plugins: [],
 }
